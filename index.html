@@ -51,6 +51,54 @@
       font-size: 1.2rem;
     }
 
+    /* HEADER CONTENT WITH PROFILE PICTURE */
+    .header-content {
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      gap: 1.5rem;
+      flex-wrap: wrap;
+      max-width: 900px;
+      margin: 0 auto;
+    }
+
+    .profile-pic {
+      width: 120px;
+      height: 120px;
+      border-radius: 50%;
+      object-fit: cover;
+      border: 3px solid white;
+      box-shadow: 0 4px 8px rgba(0,0,0,0.2);
+      transition: transform 0.3s;
+    }
+
+    .profile-pic:hover {
+      transform: scale(1.05);
+    }
+
+    .header-text h1 {
+      font-size: 2.5rem;
+      margin: 0;
+      text-align: center;
+    }
+
+    .header-text p {
+      margin-top: 0.5rem;
+      font-size: 1.2rem;
+      text-align: center;
+    }
+
+    /* RESPONSIVE ADJUSTMENTS */
+    @media (min-width: 768px) {
+      .header-content {
+        flex-wrap: nowrap;
+        text-align: left;
+      }
+      .header-text h1, .header-text p {
+        text-align: left;
+      }
+    }
+
     nav {
       display: flex;
       justify-content: center;
@@ -146,13 +194,20 @@
       background: rgba(255,255,255,0.4);
     }
 
+    
+
   </style>
 </head>
 <body>
 
 <header>
-  <h1>👋 Hi, I'm Kingson Chan</h1>
-  <p>Project Manager • Technology Consultant • Data & Cloud Enthusiast</p>
+  <div class="header-content">
+    <img src="ProfilePic_Kingson.png" alt="Kingson Chan" class="profile-pic">
+    <div class="header-text">
+      <h1>Kingson Chan</h1>
+      <p>Project Delivery Manager • Technology Consultant • Data, Cloud & AI Enthusiast</p>
+    </div>
+  </div>
   <button id="theme-toggle">🌙 Dark Mode</button>
   <nav>
     <a href="#about">About</a>
@@ -168,14 +223,14 @@
 <section id="about">
   <h2>🙋 About</h2>
   <p>
-    Results-driven and detail-oriented project management professional with strong experience leading and delivering complex digital transformation and system integration projects across the public and private sectors. Skilled in stakeholder engagement, Agile delivery, workflow redesign, and cross-functional leadership. Passionate about bridging business needs with technology to deliver timely, high-quality outcomes.
+    Specializing in project delivery, technology consulting, and solutions implementation across various industries, with extensive experience leading end-to-end client-facing digital transformation and system integration projects in both the public and private sectors. Skilled in stakeholder engagement, Agile delivery, workflow redesign, and cross-functional leadership, with a strong focus on bridging business needs with technology to deliver timely, high-quality outcomes that drive measurable impact.
   </p>
 </section>
 
 <section id="experience">
   <h2>💼 Experience</h2>
   <details open>
-    <summary><strong>Project Manager</strong> — SIFT Analytics Group (May 2025 – Present)</summary>
+    <summary><strong>Project Manager</strong> — SIFT Analytics Group (Present)</summary>
     <ul>
       <li>Managed implementation and delivery of technology and data analytics projects (Qlik Sense, AWS Cloud, Freshworks, Alteryx).</li>
       <li>Oversaw end-to-end project activities including risk monitoring, scheduling, and critical path management.</li>
@@ -185,7 +240,7 @@
     </ul>
   </details>
   <details>
-    <summary><strong>Management Consultant</strong> — Accenture (Jun 2023 – Mar 2025)</summary>
+    <summary><strong>Management Consultant</strong> — Accenture</summary>
     <ul>
       <li>Led IT system implementation and change request projects for 2 public services clients.</li>
       <li>Managed full IT project lifecycle from requirement gathering, SIT/UAT to Go-Live deployment.</li>
@@ -195,7 +250,7 @@
     </ul>
   </details>
   <details>
-    <summary><strong>Business Strategy Intern</strong> — ADDX (May 2022 – Aug 2022)</summary>
+    <summary><strong>Business Strategy</strong> — ADDX</summary>
     <ul>
       <li>Conducted Go-to-Market research across 6 jurisdictions.</li>
       <li>Enhanced analytics using Amplitude and PowerBI for tracking performance metrics.</li>
@@ -204,7 +259,7 @@
     </ul>
   </details>
   <details>
-    <summary><strong>Business Development Intern</strong> — Shopee (Oct 2021 – Jan 2022)</summary>
+    <summary><strong>Business Development</strong> — Shopee</summary>
     <ul>
       <li>Conducted market and industry analysis to identify high-potential sellers.</li>
       <li>Managed internal campaigns, promotions, and revenue initiatives.</li>
@@ -216,9 +271,9 @@
 <section id="projects">
   <h2>🛠️ Projects</h2>
   <ul>
-    <li><strong>System Enhancement & Integration</strong> — Integrated OutSystems-based platform with 61 subsystem interfaces, improving workflows and automation (LTA client).</li>
+    <li><strong>System Enhancement & Maintenance</strong> — Delivered Qlik-based analytics solutions, managing service and change requests, enhancements, and incident resolutions with SLA adherence. Conducted critical path identification, risk monitoring, task coordination, and schedule adjustments to meet deadlines. </li>
+    <li><strong>System Integration</strong> — Integrated OutSystems-based platform with 61 subsystem interfaces, improving workflows and automation (LTA client).</li>
     <li><strong>System Migration</strong> — Transitioned legacy reporting system to Java-based platform, converting 170+ reports, improving reliability and user experience (MOE client).</li>
-    <li><strong>DOS & PUB Projects</strong> — Delivered Qlik-based analytics solutions, managing service requests, enhancements, and incident resolutions with SLA adherence.</li>
   </ul>
 </section>
 
@@ -229,10 +284,10 @@
       <tr><th>Category</th><th>Skills</th></tr>
     </thead>
     <tbody>
-      <tr><td><strong>Project Management</strong></td><td>Agile, Scrum, Change Management, Stakeholder Engagement, Jira, ClickUp, Confluence</td></tr>
-      <tr><td><strong>Technical</strong></td><td>Python, HTML, PHP, JavaScript, SQL, AWS EC2, Docker, OutSystems, Salesforce</td></tr>
+      <tr><td><strong>Project Management</strong></td><td>Agile Project Management, Scrum, Change Management, Stakeholder Engagement, Jira, ClickUp, Confluence</td></tr>
+      <tr><td><strong>Technical</strong></td><td>Python, HTML, PHP, JavaScript, SQL, AWS Cloud, Docker, OutSystems, Salesforce, Qlik</td></tr>
       <tr><td><strong>Data & Analytics</strong></td><td>Qlik Sense, PowerBI, Amplitude, Data Visualization, Business Process Improvement</td></tr>
-      <tr><td><strong>Other</strong></td><td>Financial Analysis, Accounting, Cloud-Native Solutions, SDLC</td></tr>
+      <tr><td><strong>Others</strong></td><td>Financial Analysis, Accounting, Cloud-Native Solutions, SDLC</td></tr>
     </tbody>
   </table>
   <div class="badges">
@@ -245,7 +300,7 @@
 <section id="education">
   <h2>🎓 Education</h2>
   <ul>
-    <li><strong>BSc in Information Systems</strong> — Singapore Management University (2019–2023)<br><em>Specialisations: Financial Technology and Digitalisation, Cloud Solutions</em></li>
+    <li><strong>Bachelor of Science in Information Systems</strong> — Singapore Management University (2019–2023)<br><em>Specialisations: Financial Technology and Digitalised Cloud Solutions</em></li>
     <li><strong>Exchange Programme</strong> — Neoma Business School, France (Aug–Dec 2022)</li>
     <li><strong>Diploma in Accounting & Finance</strong> — Temasek Polytechnic (2014–2017)</li>
   </ul>
@@ -256,14 +311,15 @@
   <ul>
     <li>Professional Certificate in Agile Project and Product Management — SUTD Academy (2025)</li>
     <li>Certified Scrum Product Owner — Scrum Alliance (2025)</li>
-    <li>Certified Scrum Master — Scrum Alliance (2024)</li>
+    <li>Certified Scrum Master — Scrum Alliance (2025)</li>
     <li>Generative AI & Machine Learning — Skillsoft (2024)</li>
+    <li>Generative AI APIs for Practical Applications — Skillsoft (2024)</li>
   </ul>
 </section>
 
 <section id="contact">
   <h2>📫 Contact</h2>
-  <p>Email: <a href="mailto:kingsonchan97@outlook.com">kingsonchan97@outlook.com</a> | Phone: +65 8278 3712</p>
+  <p>Email: <a href="mailto:kingsonchan97@outlook.com">kingsonchan97@outlook.com</a></p>
   <p><a href="https://www.linkedin.com/in/kingsonchan97" target="_blank">LinkedIn</a></p>
 </section>
 
