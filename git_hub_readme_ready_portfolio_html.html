@@ -6,76 +6,146 @@
   <title>Kingson Chan | Portfolio</title>
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;800&display=swap" rel="stylesheet">
   <style>
+    :root {
+      --primary: #007BA7; /* Cerulean */
+      --secondary: #003366; /* Dark Blue */
+      --text-light: #f8fafc;
+      --text-dark: #1e293b;
+      --link-light: #e0e7ff;
+      --link-dark: #93c5fd;
+      --border-light: #e2e8f0;
+      --border-dark: #555;
+      --bg-light: #f8fafc;
+      --bg-dark: #0f172a;
+    }
+
     body {
       font-family: 'Inter', sans-serif;
       margin: 0;
-      background: #f8fafc;
-      color: #1e293b;
+      background: var(--bg-light);
+      color: var(--text-dark);
       line-height: 1.6;
+      transition: background 0.3s, color 0.3s;
     }
+
+    body.dark {
+      background: var(--bg-dark);
+      color: var(--text-light);
+    }
+
     header {
-      background: linear-gradient(135deg, #007BA7, #003366); /* Cerulean to Dark Blue */
+      background: linear-gradient(135deg, var(--primary), var(--secondary));
       color: white;
       text-align: center;
       padding: 3rem 1rem;
+      position: relative;
     }
+
     header h1 {
       font-size: 2.5rem;
       margin: 0;
     }
+
     header p {
       margin-top: 0.5rem;
       font-size: 1.2rem;
     }
+
     nav {
       display: flex;
       justify-content: center;
       gap: 1.5rem;
       margin-top: 1rem;
+      flex-wrap: wrap;
     }
+
     nav a {
-      color: #e0e7ff;
+      color: var(--link-light);
       text-decoration: none;
       font-weight: 600;
+      transition: color 0.3s;
     }
+
+    body.dark nav a {
+      color: var(--link-dark);
+    }
+
     section {
       max-width: 900px;
       margin: 2rem auto;
       padding: 0 1rem;
     }
+
     h2 {
-      border-bottom: 2px solid #e2e8f0;
+      border-bottom: 2px solid var(--border-light);
       padding-bottom: 0.25rem;
       margin-bottom: 1rem;
-      color: #003366;
+      color: var(--secondary);
+      transition: border-color 0.3s, color 0.3s;
     }
+
+    body.dark h2 {
+      border-color: var(--border-dark);
+      color: var(--primary);
+    }
+
     details summary {
       cursor: pointer;
       font-weight: 600;
       margin: 0.5rem 0;
     }
+
     ul {
       padding-left: 1.5rem;
     }
+
     table {
       width: 100%;
       border-collapse: collapse;
       margin: 1rem 0;
     }
+
     table th, table td {
       padding: 0.5rem;
-      border: 1px solid #e2e8f0;
+      border: 1px solid var(--border-light);
+      transition: border-color 0.3s;
     }
+
+    body.dark table th, body.dark table td {
+      border-color: var(--border-dark);
+    }
+
     footer {
       text-align: center;
       padding: 2rem 1rem;
-      background: #1e293b;
-      color: #cbd5e1;
+      background: var(--secondary);
+      color: var(--text-light);
       margin-top: 3rem;
     }
+
     .badges img {
       margin: 0.2rem;
     }
+
+    /* Dark mode toggle button */
+    #theme-toggle {
+      position: absolute;
+      top: 1rem;
+      right: 1rem;
+      background: rgba(255,255,255,0.2);
+      border: 1px solid white;
+      color: white;
+      padding: 0.3rem 0.6rem;
+      border-radius: 6px;
+      cursor: pointer;
+      font-weight: 600;
+      transition: background 0.3s, color 0.3s;
+    }
+
+    #theme-toggle:hover {
+      background: rgba(255,255,255,0.4);
+    }
+
   </style>
 </head>
 <body>
@@ -83,6 +153,7 @@
 <header>
   <h1>👋 Hi, I'm Kingson Chan</h1>
   <p>Project Manager • Technology Consultant • Data & Cloud Enthusiast</p>
+  <button id="theme-toggle">🌙 Dark Mode</button>
   <nav>
     <a href="#about">About</a>
     <a href="#experience">Experience</a>
@@ -200,6 +271,19 @@
   <p>© 2025 Kingson Chan — Built with ❤️ and HTML/CSS, deployed on GitHub Pages</p>
   <p><a href="#top" style="color:#93c5fd;">⬆️ Back to top</a></p>
 </footer>
+
+<script>
+  const toggle = document.getElementById('theme-toggle');
+  const body = document.body;
+  toggle.addEventListener('click', () => {
+    body.classList.toggle('dark');
+    if(body.classList.contains('dark')){
+      toggle.textContent = '☀️ Light Mode';
+    } else {
+      toggle.textContent = '🌙 Dark Mode';
+    }
+  });
+</script>
 
 </body>
 </html>
